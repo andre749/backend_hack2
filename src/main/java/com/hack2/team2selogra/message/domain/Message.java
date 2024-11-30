@@ -32,7 +32,7 @@ public class Message {
     @Enumerated(EnumType.STRING)
     private AIModel aiModel;
 
-    // Método para obtener chatID explícitamente desde el objeto Chat
+    // Méto para obtener chatID explícitamente desde el objeto Chat
     public UUID getChatID() {
         return chat != null ? chat.getId() : null;
     }
