@@ -3,6 +3,8 @@ package com.hack2.team2selogra.User.domain;
 import com.hack2.team2selogra.User.infraestructure.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -22,5 +24,9 @@ public class UserService {
         return userRepository.findByEmail(email)
                 .map(user -> user.getPassword().equals(password))
                 .orElse(false);
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
